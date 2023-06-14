@@ -28,7 +28,7 @@
             <div class="mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-white font-bold leading-tight">Everybody gets their own copy of the list, plus any updates you make.</div>
         </div>
         <div class="flex justify-center items-center">
-            <a class="hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-pink-700	focus:ring-white rounded text-pink-700 px-4 sm:px-8 py-1 sm:py-3 text-sm" href="/create">Get Started</a>
+            <a class="hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-pink-700	focus:ring-white rounded text-pink-700 px-4 sm:px-8 py-1 sm:py-3 text-sm" href="/browse">Get Started</a>
             <a class="ml-4 hover:text-white hover:bg-transparent lg:text-xl hover:border-white border bg-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-pink-700	focus:ring-white rounded text-pink-700 px-4 sm:px-8 py-1 sm:py-3 text-sm" href="browse">Browse Lists</a>
         </div>
     </div>
