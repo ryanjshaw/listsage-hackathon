@@ -1,0 +1,285 @@
+{
+    "projectId": "646d183b2ce54b22f552",
+    "projectName": "List Sage",
+    "databases": [
+        {
+            "$id": "default",
+            "name": "default",
+            "$createdAt": "2023-06-11T18:45:57.397+00:00",
+            "$updatedAt": "2023-06-11T18:45:57.397+00:00"
+        }
+    ],
+    "collections": [
+        {
+            "$id": "lists",
+            "$permissions": [
+                "create(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "lists",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "title",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "author",
+                    "type": "string",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "source",
+                    "type": "string",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "currentVersionId",
+                    "type": "string",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "description",
+                    "type": "string",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                }
+            ],
+            "indexes": [
+                {
+                    "key": "user",
+                    "type": "key",
+                    "status": "available",
+                    "attributes": [
+                        "userId"
+                    ],
+                    "orders": [
+                        "ASC"
+                    ]
+                }
+            ]
+        },
+        {
+            "$id": "listVersions",
+            "$permissions": [],
+            "databaseId": "default",
+            "name": "listVersions",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "listId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "items",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 500000,
+                    "default": null
+                },
+                {
+                    "key": "bannerFileId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "iconFileId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                }
+            ],
+            "indexes": [
+                {
+                    "key": "list",
+                    "type": "key",
+                    "status": "available",
+                    "attributes": [
+                        "listId"
+                    ],
+                    "orders": [
+                        "ASC"
+                    ]
+                },
+                {
+                    "key": "search",
+                    "type": "fulltext",
+                    "status": "available",
+                    "attributes": [
+                        "items"
+                    ],
+                    "orders": [
+                        "ASC"
+                    ]
+                }
+            ]
+        },
+        {
+            "$id": "listStates",
+            "$permissions": [
+                "create(\"users\")"
+            ],
+            "databaseId": "default",
+            "name": "listStates",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "listId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "status",
+                    "type": "string",
+                    "status": "available",
+                    "required": false,
+                    "array": false,
+                    "elements": [
+                        "Active",
+                        "Inactive"
+                    ],
+                    "format": "enum",
+                    "default": "Inactive"
+                },
+                {
+                    "key": "favs",
+                    "type": "integer",
+                    "status": "available",
+                    "required": false,
+                    "array": true,
+                    "min": -9223372036854775808,
+                    "max": 9223372036854775807,
+                    "default": null
+                },
+                {
+                    "key": "done",
+                    "type": "integer",
+                    "status": "available",
+                    "required": false,
+                    "array": true,
+                    "min": -9223372036854775808,
+                    "max": 9223372036854775807,
+                    "default": null
+                }
+            ],
+            "indexes": [
+                {
+                    "key": "unique",
+                    "type": "unique",
+                    "status": "available",
+                    "attributes": [
+                        "listId",
+                        "userId"
+                    ],
+                    "orders": [
+                        "ASC",
+                        "ASC"
+                    ]
+                }
+            ]
+        }
+    ],
+    "buckets": [
+        {
+            "$id": "list-icons",
+            "$createdAt": "2023-06-14T16:07:20.573+00:00",
+            "$updatedAt": "2023-06-14T16:48:10.065+00:00",
+            "$permissions": [
+                "create(\"users\")",
+                "delete(\"users\")",
+                "read(\"any\")"
+            ],
+            "fileSecurity": false,
+            "name": "list-icons",
+            "enabled": true,
+            "maximumFileSize": 102400,
+            "allowedFileExtensions": [
+                "jpg",
+                "png"
+            ],
+            "compression": "none",
+            "encryption": false,
+            "antivirus": true
+        },
+        {
+            "$id": "list-banners",
+            "$createdAt": "2023-06-14T16:07:30.199+00:00",
+            "$updatedAt": "2023-06-14T16:48:00.912+00:00",
+            "$permissions": [
+                "read(\"any\")",
+                "create(\"users\")",
+                "delete(\"users\")"
+            ],
+            "fileSecurity": false,
+            "name": "list-banners",
+            "enabled": true,
+            "maximumFileSize": 1048576,
+            "allowedFileExtensions": [
+                "jpg",
+                "png"
+            ],
+            "compression": "none",
+            "encryption": false,
+            "antivirus": true
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<nav class="w-full mt-2 pb-2 shadow-sm">
+			<div class="container mx-auto px-6 flex items-center justify-between">
+				<a class="flex items-center" aria-label="Home" role="img" href="/">
+					<img class="cursor-pointer w-8 h-8 sm:h-10 sm:w-auto" src="/logo.png" alt="logo"/>     
+					<p class="ml-2 lg:ml-4 text-xl sm:text-2xl font-bold text-gray-800">List Sage</p>
+				</a>
+			</div>
+		</nav>
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
