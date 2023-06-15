@@ -13,7 +13,7 @@
 </script>
 
 <div class="flex pl-2 pt-1 pb-1 bg-pink-500 items-center">    
-    <button class="text-white text-2xl" on:click={() => dispatch('back')}>🡄</button>
+    <button class="text-white text-2xl" on:click={() => dispatch('back')}>&larr;</button>
     <div class="ml-2 h-8 w-8 overflow-hidden rounded-full" >
         <img src={iconUrl} alt="List icon" />
     </div>

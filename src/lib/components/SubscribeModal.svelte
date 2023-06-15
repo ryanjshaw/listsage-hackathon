@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="px-4 py-3 w-full flex justify-center">
-                    <input type="email" placeholder="Email Address" bind:value={email} class="py-2 px-6 rounded-l-md border border-gray-400">
+                    <input type="email" placeholder="Email Address" bind:value={email} class="py-2 px-6 w-2/3 rounded-l-md border border-gray-400">
                     <button type="button" class="py-2 px-6 rounded-r-md text-white bg-pink-600 hover:bg-pink-500" on:click={subscribe}>Subscribe</button>					
                 </div>
                 <button type="button" class="px-3 py-2 text-sm text-gray-700 text-center w-full" on:click={() => dispatch('closed') }>&lt; Go back</button>
