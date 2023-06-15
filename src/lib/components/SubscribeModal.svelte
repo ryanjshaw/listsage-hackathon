@@ -4,6 +4,7 @@
 	import { fade } from "svelte/transition";
 
     export let listTitle: string;
+    export let iconUrl: string;
     export let redirectParameters: string;
     
     const dispatch = createEventDispatcher();
@@ -27,7 +28,7 @@
             {#if !sent}
                 <div class="bg-white mx-auto px-4 pb-4 pt-5">
                     <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-full">
-                        <img src="/awesome-appwrite-thumbnail.png" alt="List Icon" />
+                        <img src={iconUrl} alt="List Icon" />
                     </div>
                     <div class="mt-3 text-center">
                         <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">{listTitle}</h3>
