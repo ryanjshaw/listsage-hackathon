@@ -116,7 +116,7 @@
 	<SubscribeModal 
 		listTitle={list.title}
 		iconUrl={iconUrl.toString()}
-		redirectParameters={`?listId=${list.id}&sectionId=${selectedSection?.id}`} 
+		redirectParameters={`?listId=${list.$id}&sectionId=${selectedSection?.id}`} 
 		on:closed={() => showingSubscribeModal = false }
 	/>
 {:else if selectedSection}

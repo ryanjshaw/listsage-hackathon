@@ -28,7 +28,12 @@
                 // handle magic login on /magic and then redirect to
                 // the appropriate /list route to generate a clean URL.
                 await AppwriteService.updateMagicURLSession(userId, secret);
-                window.location.href = `${window.location.origin}/list/${listId}?sectionId=${sectionId}`;
+
+                let target = `${window.location.origin}/list/${listId}`;
+                if (sectionId !== "undefined")
+                    target += `?sectionId=${sectionId}`;
+
+                window.location.href = target;
             }
             else
             {
